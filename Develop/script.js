@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-// variables for user input data from generatePassword function
+// variables for user input data gathered from generatePassword function
 var passwordChars;
 var specialCharConfirm;
 var numbersConfirm;
@@ -14,6 +14,15 @@ var choices;
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 var specialChars = ['!', '#', '$', '%', '&', '*', '+', '-', '/', ':', '<', '>', '=', '?', '@', '[', ']', '^', '_', '~'];
+
+
+// convert lowercase letters to uppercase
+var toUpperCase = function(str) {
+  return str.toUpperCase();
+};
+
+// create a new array for uppercase using map() method
+var alphabetUpper = alphabet.map(toUpperCase);
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -48,13 +57,74 @@ function generatePassword() {
     choices = alert("You must choose at least one character category!");
   }
 
-  // switch statement to evaluate conditions of user choice values
-  s
+  // logic functions to complete user choices
+  // beginning with case in which user chooses all 4
+  else if (specialCharConfirm && numbersConfirm && alphabetUpperConfirm && alphabetLowerConfirm ) {
+    choices = alphabet.concat(numbers, specialChars, alphabetUpper);
+  }
+  // continue on to cases in which user only chooses 3 options...
+  else if (specialCharConfirm && numbersConfirm && alphabetUpperConfirm) {
+    choices = specialChars.concat(numbers, alphabetUpperConfirm);
+  }
+  else if (numbersConfirm && alphabetUpperConfirm && alphabetLowerConfirm) {
+    choices = numbers.concat(alphabetUpper, alphabet);
+  }
+  else if (alphabetUpperConfirm && alphabetLowerConfirm && specialCharConfirm) {
+    choices = alphabetUpper.concat(alphabet, specialChars);
+  }
+  // continue on to cases in which user only chooses 2 options...
+  else if (alphabetUpperConfirm && alphabetLowerConfirm) {
+    choices = alphabetUpper.concat(alphabet);
+  }
+  else if (alphabetUpperConfirm && numbersConfirm) {
+    choices = alphabetUpper.concat(numbers);
+  }
+  else if (alphabetUpperConfirm && specialCharConfirm) {
+    choices = alphabetUpper.concat(specialChars);
+  }
+  else if (alphabetLowerConfirm && numbersConfirm) {
+    choices = alphabet.concat(numbers);
+  }
+  else if (alphabetLowerConfirm && specialCharConfirm) {
+    choices = alphabet.concat(specialChars);
+  }
+  else if (numbersConfirm && specialChars) {
+    choices = numbers.concat(specialChars);
+  }
+  // continue on to cases in which users only choose 1 option...
+  else if (alphabetUpperConfirm) {
+    choices = alphabetUpper;
+  }
+  else if (alphabetLowerConfirm) {
+    choices = alphabet;
+  }
+  else if (numbersConfirm) {
+    choices = numbers;
+  }
+  else if (specialCharConfirm) {
+    choices = specialChars;
+  };
+
+  // Generate random string result depending on user choices...
+  var password = [];
+  // use a for loop to loop through all choice array options...
+  for (i = 0; i < passwordChars; i++) {
+    var userChoices = choices[Math.floor(Math.random() * choices.length)];
+    password.push(userChoices);
+    return userChoices;
+  }
+
 }
 
+// push password value into DOM textbox
+ 
+
+
   // console.logs to confirm receipt of user choices
-  console.log(passwordChars);
-  console.log(specialCharConfirm);
-  console.log(numbersConfirm);
-  console.log(alphabetUpperConfirm);
-  console.log(alphabetLowerConfirm);
+  console.log("passwordChars - ", passwordChars);
+  console.log("specialCharConfirm - ", specialCharConfirm);
+  console.log("numbersConfirm - ", numbersConfirm);
+  console.log("alphabetUpperConfirm - ", alphabetUpperConfirm);
+  console.log("alphabetLowerConfirm - ", alphabetLowerConfirm);
+  console.log("choices - ", choices);
+  console.log("password - ", password);
