@@ -27,10 +27,11 @@ var alphabetUpper = alphabet.map(toUpperCase);
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var passwordText = document.querySelector("#password").placeholder = password;
 
   passwordText.value = password;
 }
@@ -46,11 +47,11 @@ function generatePassword() {
   // continues once user input is confirmed with a valid number range
   // begins with user confirmation prompts for password entries
   } else {
-    var specialCharConfirm = confirm("Would you like special characters in your password?");
-    var numbersConfirm = confirm("Would you like numbers in your password?");
-    var alphabetUpperConfirm = confirm("Would you like uppercase letters in your password?");
-    var alphabetLowerConfirm = confirm("Would you like lowercase letters in your password?");
-  };
+    specialCharConfirm = confirm("Would you like special characters in your password?");
+    numbersConfirm = confirm("Would you like numbers in your password?");
+    alphabetUpperConfirm = confirm("Would you like uppercase letters in your password?");
+    alphabetLowerConfirm = confirm("Would you like lowercase letters in your password?");
+  }
 
   // if user doesn't choose any criterias, return an alert
   if (!specialCharConfirm && !numbersConfirm && !alphabetUpperConfirm && !alphabetLowerConfirm) {
@@ -59,49 +60,49 @@ function generatePassword() {
 
   // logic functions to complete user choices
   // beginning with case in which user chooses all 4
-  else if (specialCharConfirm && numbersConfirm && alphabetUpperConfirm && alphabetLowerConfirm ) {
+  else if ((specialCharConfirm == true) && (numbersConfirm == true) && (alphabetUpperConfirm == true) && (alphabetLowerConfirm == true) ) {
     choices = alphabet.concat(numbers, specialChars, alphabetUpper);
   }
   // continue on to cases in which user only chooses 3 options...
-  else if (specialCharConfirm && numbersConfirm && alphabetUpperConfirm) {
+  else if ((specialCharConfirm == true) && (numbersConfirm == true) && (alphabetUpperConfirm == true)) {
     choices = specialChars.concat(numbers, alphabetUpperConfirm);
   }
-  else if (numbersConfirm && alphabetUpperConfirm && alphabetLowerConfirm) {
+  else if ((numbersConfirm == true) && (alphabetUpperConfirm == true) && (alphabetLowerConfirm == true)) {
     choices = numbers.concat(alphabetUpper, alphabet);
   }
-  else if (alphabetUpperConfirm && alphabetLowerConfirm && specialCharConfirm) {
+  else if ((alphabetUpperConfirm == true) && (alphabetLowerConfirm == true) && (specialCharConfirm == true)) {
     choices = alphabetUpper.concat(alphabet, specialChars);
   }
   // continue on to cases in which user only chooses 2 options...
-  else if (alphabetUpperConfirm && alphabetLowerConfirm) {
+  else if ((alphabetUpperConfirm == true) && (alphabetLowerConfirm == true)) {
     choices = alphabetUpper.concat(alphabet);
   }
-  else if (alphabetUpperConfirm && numbersConfirm) {
+  else if ((alphabetUpperConfirm == true) && (numbersConfirm == true)) {
     choices = alphabetUpper.concat(numbers);
   }
-  else if (alphabetUpperConfirm && specialCharConfirm) {
+  else if ((alphabetUpperConfirm == true) && (specialCharConfirm == true)) {
     choices = alphabetUpper.concat(specialChars);
   }
-  else if (alphabetLowerConfirm && numbersConfirm) {
+  else if ((alphabetLowerConfirm == true) && (numbersConfirm == true)) {
     choices = alphabet.concat(numbers);
   }
-  else if (alphabetLowerConfirm && specialCharConfirm) {
+  else if ((alphabetLowerConfirm == true) && (specialCharConfirm == true)) {
     choices = alphabet.concat(specialChars);
   }
-  else if (numbersConfirm && specialChars) {
+  else if ((numbersConfirm == true) && (specialChars == true)) {
     choices = numbers.concat(specialChars);
   }
   // continue on to cases in which users only choose 1 option...
-  else if (alphabetUpperConfirm) {
+  else if (alphabetUpperConfirm == true) {
     choices = alphabetUpper;
   }
-  else if (alphabetLowerConfirm) {
+  else if (alphabetLowerConfirm == true) {
     choices = alphabet;
   }
-  else if (numbersConfirm) {
+  else if (numbersConfirm == true) {
     choices = numbers;
   }
-  else if (specialCharConfirm) {
+  else if (specialCharConfirm == true) {
     choices = specialChars;
   };
 
@@ -110,14 +111,12 @@ function generatePassword() {
   // use a for loop to loop through all choice array options...
   for (i = 0; i < passwordChars; i++) {
     var userChoices = choices[Math.floor(Math.random() * choices.length)];
+    // push the userChoices variable that used randomly chosen array elements to form a new array, [password]
     password.push(userChoices);
-    return userChoices;
   }
+};
 
-}
 
-// push password value into DOM textbox
- 
 
 
   // console.logs to confirm receipt of user choices
