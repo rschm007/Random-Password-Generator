@@ -9,13 +9,11 @@ var alphabetLowerConfirm;
 
 // declaring the var choices outside of a function for concatenation
 var choices;
-// Generate a string constructed from user choices
-var password = [];
 
 // Arrays for password criteria (alphabet[will convert lowercase, uppercase later], numbers, special characters)
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-var specialChars = ['!', '#', '$', '%', '&', '*', '+', '-', '/', ':', '<', '>', '=', '?', '@', '[', ']', '^', '_', '~'];
+var specialChars = ['!', '#', '$', '%', '&', '*', '+', '-', '/', ':', '<', '>', '=', '?', '@', '^', '_', '~'];
 
 // convert lowercase letters to uppercase
 var toUpperCase = function(str) {
@@ -25,17 +23,13 @@ var toUpperCase = function(str) {
 // create a new array for uppercase using map() method
 var alphabetUpper = alphabet.map(toUpperCase);
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-
-// Write password to the #password input
-function writePassword() {
+// Add event listener to generate button. On click, will perform the generatePassword function
+generateBtn.addEventListener("click", function() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password").placeholder = password;
+  var passwordText = document.querySelector("#password")
 
   passwordText.value = password;
-}
+})
 
 // function to generate series of prompts when user clicks "Generate Password" button
 function generatePassword() {
@@ -81,63 +75,63 @@ function generatePassword() {
   // continue on to cases in which user only chooses 2 options...
   else if ((alphabetUpperConfirm == true) && (alphabetLowerConfirm == true)) {
     choices = alphabetUpper.concat(alphabet);
-        return choices;
+    return choices;
   }
   else if ((alphabetUpperConfirm == true) && (numbersConfirm == true)) {
     choices = alphabetUpper.concat(numbers);
-        return choices;
+    return choices;
   }
   else if ((alphabetUpperConfirm == true) && (specialCharConfirm == true)) {
     choices = alphabetUpper.concat(specialChars);
-        return choices;
+    return choices;
   }
   else if ((alphabetLowerConfirm == true) && (numbersConfirm == true)) {
     choices = alphabet.concat(numbers);
-        return choices;
+    return choices;
   }
   else if ((alphabetLowerConfirm == true) && (specialCharConfirm == true)) {
     choices = alphabet.concat(specialChars);
-        return choices;
+    return choices;
   }
   else if ((numbersConfirm == true) && (specialChars == true)) {
     choices = numbers.concat(specialChars);
-        return choices;
+    return choices;
   }
   // continue on to cases in which users only choose 1 option...
   else if (alphabetUpperConfirm == true) {
     choices = alphabetUpper;
-        return choices;
+    return choices;
   }
   else if (alphabetLowerConfirm == true) {
     choices = alphabet;
-        return choices;
+    return choices;
   }
   else if (numbersConfirm == true) {
     choices = numbers;
-        return choices;
+    return choices;
   }
   else if (specialCharConfirm == true) {
     choices = specialChars;
-        return choices;
+    return choices;
   };
+
+  // Generate an empty string as a place to put user generated length
+  passwordArr = [];
 
   // use a for loop to loop through all choice array options...
   for (i = 0; i < passwordChars; i++) {
-    var password = [];
-    var userChoices = join.choices[Math.floor(Math.random() * choices.length)];
-    // push the userChoices variable that used randomly chosen array elements to form a new array, [password]
-    password.push(userChoices);
+    // push choice array options into empty passwordArr
+    var userChoices = choices[Math.floor(Math.random() * choices.length)];
+    passwordArr.push(userChoices);
   }
-};
+
+  // join the passwordArr array to convert it into a string. Returns password
+  var password = passwordArr.join("");
+  return password;
+}
 
 
 
 
   // console.logs to confirm receipt of user choices
-  console.log("passwordChars - ", passwordChars);
-  console.log("specialCharConfirm - ", specialCharConfirm);
-  console.log("numbersConfirm - ", numbersConfirm);
-  console.log("alphabetUpperConfirm - ", alphabetUpperConfirm);
-  console.log("alphabetLowerConfirm - ", alphabetLowerConfirm);
-  console.log("choices - ", choices);
   console.log("password - ", password);
