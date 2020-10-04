@@ -7,8 +7,10 @@ This app uses Javascript to generate a randomized password for the user accordin
 
 The project has been deployed to GitHub pages. To use the app you can follow the deployment link or download the source files for you to use as a template.
 
-1)<a href="https://rschm007.github.io/Random-Password-Generator/index.html">Deployed app link</a>
-2)<a href="https://github.com/rschm007/Random-Password-Generator">GitHub repository
+1)<a href="https://rschm007.github.io/Random-Password-Generator/index.html"> Deployed app link</a>
+<br>
+2)<a href="https://github.com/rschm007/Random-Password-Generator"> GitHub repository</a>
+<br>
 
 Prerequisites
 -----------------------------
