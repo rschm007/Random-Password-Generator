@@ -32,12 +32,13 @@ Upon clicking the button the user is given a series of prompts that help to defi
 2) Do you want upper case characters included?
 <img src="https://raw.githubusercontent.com/rschm007/Random-Password-Generator/main/Assets/RPG-3.png" alt="Random-Password-Generator Demo Image with prompt for upper case letters" style="max-width:100%;">
 
-2) Do you want lower case characters included?
+3) Do you want lower case characters included?
 <img src="https://raw.githubusercontent.com/rschm007/Random-Password-Generator/main/Assets/RPG-4.png" alt="Random-Password-Generator Demo Image with prompt for lower case letters" style="max-width:100%;">
 
-2) Do you want special characters included?
+4) Do you want special characters included?
 <img src="https://raw.githubusercontent.com/rschm007/Random-Password-Generator/main/Assets/RPG-5.png" alt="Random-Password-Generator Demo Image with prompt for special characters" style="max-width:100%;">
-2) Do you want numbers included?
+
+5) Do you want numbers included?
 <img src="https://raw.githubusercontent.com/rschm007/Random-Password-Generator/main/Assets/RPG-2.png" alt="Random-Password-Generator Demo Image with prompt for numbers" style="max-width:100%;">
 
 If the user enters the wrong range of numbers for the password then they are alerted and returned to the beginning of the prompts. If they don't choose any categories to include then they are alerted and prompted to begin again.
