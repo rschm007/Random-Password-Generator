@@ -3,6 +3,10 @@ Random Password Generator
 
 This webapp was designed as part of the UCI Web Development Bootcamp.
 
+This app uses Javascript to generate a randomized password for the user according to their specifications.
+
+The project has been deployed to GitHub pages. To use the app you can follow the deopoyment link or download the source files for you to use as a template.
+
 The user is presented with a page containing an empty textfield and a button stating "Generate Password." Upon clicking the button the user is given a series of prompts that help to define the following:
 
 1) How long should your password be?
