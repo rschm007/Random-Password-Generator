@@ -7,6 +7,8 @@ This app uses Javascript to generate a randomized password for the user accordin
 
 The project has been deployed to GitHub pages. To use the app you can follow the deployment link or download the source files for you to use as a template.
 
+1)<a href="https://rschm007.github.io/Random-Password-Generator/index.html">Deployed app link</a>
+2)<a href="https://github.com/rschm007/Random-Password-Generator">GitHub repository
 
 Prerequisites
 -----------------------------
@@ -40,4 +42,14 @@ If the user enters the wrong range of numbers for the password then they are ale
 
 Once the user selects their desired categories, the app randomly generates a password to their specifications and displays the result within the text field. This result is copy + pastable.# Random-Password-Generator
 <img src="https://raw.githubusercontent.com/rschm007/Random-Password-Generator/main/Assets/RPG-7.png" alt="Random-Password-Generator Demo Image with password string in text field" style="max-width:100%;">
+
+Authors
+-----------------------------
+• Robert Schmahl - <a href="https://github.com/rschm007">GitHub Profile</a>
+• UC Irvine Full Stack Web Development
+
+Acknowledgements
+-----------------------------
+• UC Irvine Web Development program for providing project requirements and code examples
+• Chad Tao and Nick Graffis for providing debug assistance and improvement suggestions
 
