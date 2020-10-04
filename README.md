@@ -48,10 +48,14 @@ Once the user selects their desired categories, the app randomly generates a pas
 Authors
 -----------------------------
 • Robert Schmahl - <a href="https://github.com/rschm007">GitHub Profile</a>
+<br>
 • UC Irvine Full Stack Web Development
+<br>
 
 Acknowledgements
 -----------------------------
 • UC Irvine Web Development program for providing project requirements and code examples
+<br>
 • Chad Tao and Nick Graffis for providing debug assistance and improvement suggestions
+<br>
 
