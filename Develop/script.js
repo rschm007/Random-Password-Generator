@@ -57,62 +57,48 @@ function generatePassword() {
   // beginning with case in which user chooses all 4
   else if ((specialCharConfirm == true) && (numbersConfirm == true) && (alphabetUpperConfirm == true) && (alphabetLowerConfirm == true) ) {
     choices = alphabet.concat(numbers, specialChars, alphabetUpper);
-    return choices;
   }
   // continue on to cases in which user only chooses 3 options...
   else if ((specialCharConfirm == true) && (numbersConfirm == true) && (alphabetUpperConfirm == true)) {
     choices = specialChars.concat(numbers, alphabetUpperConfirm);
-    return choices;
   }
   else if ((numbersConfirm == true) && (alphabetUpperConfirm == true) && (alphabetLowerConfirm == true)) {
     choices = numbers.concat(alphabetUpper, alphabet);
-    return choices;
   }
   else if ((alphabetUpperConfirm == true) && (alphabetLowerConfirm == true) && (specialCharConfirm == true)) {
     choices = alphabetUpper.concat(alphabet, specialChars);
-    return choices;
   }
   // continue on to cases in which user only chooses 2 options...
   else if ((alphabetUpperConfirm == true) && (alphabetLowerConfirm == true)) {
     choices = alphabetUpper.concat(alphabet);
-    return choices;
   }
   else if ((alphabetUpperConfirm == true) && (numbersConfirm == true)) {
     choices = alphabetUpper.concat(numbers);
-    return choices;
   }
   else if ((alphabetUpperConfirm == true) && (specialCharConfirm == true)) {
     choices = alphabetUpper.concat(specialChars);
-    return choices;
   }
   else if ((alphabetLowerConfirm == true) && (numbersConfirm == true)) {
     choices = alphabet.concat(numbers);
-    return choices;
   }
   else if ((alphabetLowerConfirm == true) && (specialCharConfirm == true)) {
     choices = alphabet.concat(specialChars);
-    return choices;
   }
   else if ((numbersConfirm == true) && (specialChars == true)) {
     choices = numbers.concat(specialChars);
-    return choices;
   }
   // continue on to cases in which users only choose 1 option...
   else if (alphabetUpperConfirm == true) {
     choices = alphabetUpper;
-    return choices;
   }
   else if (alphabetLowerConfirm == true) {
     choices = alphabet;
-    return choices;
   }
   else if (numbersConfirm == true) {
     choices = numbers;
-    return choices;
   }
   else if (specialCharConfirm == true) {
     choices = specialChars;
-    return choices;
   };
 
   // Generate an empty string as a place to put user generated length
