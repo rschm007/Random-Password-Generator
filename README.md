@@ -11,11 +11,13 @@ Summary
 -----------------------------
 
 The user is presented with a page containing an empty textfield and a button stating "Generate Password." 
-
+<img src="rschm007/Random-Password-Generator/blob/main/Assets/RPG-1.png" alt="Random-Password-Generator Demo Image" style="max-width:100%;">
 
 Upon clicking the button the user is given a series of prompts that help to define the following:
 
 1) How long should your password be?
+<img src="rschm007/Random-Password-Generator/blob/main/Assets/RPG-2.png" alt="Random-Password-Generator Demo Image with prompt for password length" style="max-width:100%;">
+
 2) Do you want upper case characters included?
 2) Do you want lower case characters included?
 2) Do you want special characters included?
